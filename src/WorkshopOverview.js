@@ -9,10 +9,18 @@ class WorskshopOverview extends Component {
         var workshop = workshops.filter((wks) => wks.Category === this.props.Workshop)[0];
         var filteredActivities = this.shuffle(activities.filter((activity) => activity.Category === this.props.Workshop)).slice(0, 5)
         var workshopActivities = [];
+
         var longRest = Object.assign({}, filteredActivities[0]);
         longRest.Name = "Repos long";
         longRest.Duration = workshop.IntervalBetweenRepetition;
         longRest.GifPath = "rest";
+
+        var sumActivity = filteredActivities.reduce((accumulator, current) => {
+            return accumulator + Number.parseInt(current.Duration) + Number.parseInt(workshop.IntervalBetweenActivity);
+        }, 0) * workshop.NumberOfRepetition;
+        var sumLongRest = workshop.IntervalBetweenRepetition * workshop.NumberOfRepetition;
+
+        var totalDurationInMinutes = Math.ceil((sumActivity + sumLongRest) / 60);
 
         for (let index = 0; index < workshop.NumberOfRepetition; index++) {
             var count = 0;
@@ -41,7 +49,8 @@ class WorskshopOverview extends Component {
         this.state = {
             filteredActivities: filteredActivities,
             selectedWorkshop: workshop,
-            workshopActivities: workshopActivities
+            workshopActivities: workshopActivities,
+            totalDurationInMinutes: totalDurationInMinutes
         }
     }
 
@@ -71,7 +80,7 @@ class WorskshopOverview extends Component {
                 <div className="container">
                     <br />
                     <h2 className="text-center text-uppercase text-secondary mb-0">{this.state.selectedWorkshop.Name}</h2>
-                    <h4 className="text-center text-secondary mb-0">{this.state.selectedWorkshop.NumberOfRepetition} répétitions</h4>
+                    <h4 className="text-center text-secondary mb-0">{this.state.selectedWorkshop.NumberOfRepetition} répétitions - {this.state.totalDurationInMinutes} mn</h4>
                     <h4 className="text-center text-secondary mb-0">Repos : {this.state.selectedWorkshop.IntervalBetweenActivity}s - {this.state.selectedWorkshop.IntervalBetweenRepetition}s</h4>
                     <br />
                     <div className="col-md-12">
