@@ -1,0 +1,182 @@
+[
+    {
+        "Duration": "35",
+        "Name": "Up & down push up",
+        "Category": "UpperBody",
+        "GifPath": "pushup"
+    },
+    {
+        "Duration": "35",
+        "Name": "Pike push up",
+        "Category": "UpperBody",
+        "GifPath": "pikepushup"
+    },
+    {
+        "Duration": "35",
+        "Name": "Superman pull",
+        "Category": "UpperBody",
+        "GifPath": "supermanpull"
+    },
+    {
+        "Duration": "35",
+        "Name": "Mountain climbers",
+        "Category": "UpperBody",
+        "GifPath": "mountainclimbers"
+    },
+    {
+        "Duration": "35",
+        "Name": "Floor triceps dips",
+        "Category": "UpperBody",
+        "GifPath": "floortricepsdips"
+    },
+    {
+        "Duration": "30",
+        "Name": "Up & down push up",
+        "Category": "Arms",
+        "GifPath": "pushup"
+    },
+    {
+        "Duration": "30",
+        "Name": "High plank knee to elbow",
+        "Category": "Arms",
+        "GifPath": "highplankkneetoelbow"
+    },
+    {
+        "Duration": "30",
+        "Name": "Inchworms",
+        "Category": "Arms",
+        "GifPath": "inchworms"
+    },
+    {
+        "Duration": "30",
+        "Name": "Reverse plank",
+        "Category": "Arms",
+        "GifPath": "reverseplank"
+    },
+    {
+        "Duration": "30",
+        "Name": "Staggered push up",
+        "Category": "Arms",
+        "GifPath": "staggeredpushup"
+    },
+    {
+        "Duration": "30",
+        "Name": "Inclined wall push up",
+        "Category": "Arms",
+        "GifPath": "inclinedwallpushup"
+    },
+    {
+        "Duration": "40",
+        "Name": "Sit ups",
+        "Category": "Abs",
+        "GifPath": "sitsups"
+    },
+    {
+        "Duration": "40",
+        "Name": "Superman",
+        "Category": "Abs",
+        "GifPath": "supermanpull"
+    },
+    {
+        "Duration": "40",
+        "Name": "Reverse crunches",
+        "Category": "Abs",
+        "GifPath": "reversecrunches"
+    },
+    {
+        "Duration": "40",
+        "Name": "Leg Raises",
+        "Category": "Abs",
+        "GifPath": "legraises"
+    },
+    {
+        "Duration": "40",
+        "Name": "High plank",
+        "Category": "Abs",
+        "GifPath": "highplank"
+    },
+    {
+        "Duration": "40",
+        "Name": "Heel Touch",
+        "Category": "Abs",
+        "GifPath": "heeltouch"
+    },
+    {
+        "Duration": "40",
+        "Name": "Bicycle Crunches",
+        "Category": "Abs",
+        "GifPath": "bicyclecrunch"
+    },
+    {
+        "Duration": "40",
+        "Name": "Cross Crunches",
+        "Category": "Abs",
+        "GifPath": "crosscrunch"
+    },
+    {
+        "Duration": "40",
+        "Name": "Flutter Kick",
+        "Category": "Abs",
+        "GifPath": "flutterkick"
+    },
+    {
+        "Duration": "50",
+        "Name": "Forward lunges",
+        "Category": "Glutes",
+        "GifPath": "forwardlunges"
+    },
+    {
+        "Duration": "50",
+        "Name": "Squat to high knees",
+        "Category": "Glutes",
+        "GifPath": "squattohighknees"
+    },
+    {
+        "Duration": "50",
+        "Name": "Marching wall sits",
+        "Category": "Glutes",
+        "GifPath": "marchingwallsits"
+    },
+    {
+        "Duration": "50",
+        "Name": "High plank jumps",
+        "Category": "Glutes",
+        "GifPath": "highplankjumps"
+    },
+    {
+        "Duration": "50",
+        "Name": "Pulsing squat",
+        "Category": "Glutes",
+        "GifPath": "pulsingsquat"
+    },
+    {
+        "Duration": "25",
+        "Name": "Squat",
+        "Category": "Legs",
+        "GifPath": "squat"
+    },
+    {
+        "Duration": "25",
+        "Name": "Touchdown lunges",
+        "Category": "Legs",
+        "GifPath": "touchdownlunges"
+    },
+    {
+        "Duration": "25",
+        "Name": "Single leg squat R",
+        "Category": "Legs",
+        "GifPath": "singlelegsquat"
+    },
+    {
+        "Duration": "25",
+        "Name": "Single leg squat L",
+        "Category": "Legs",
+        "GifPath": "singlelegsquat"
+    },
+    {
+        "Duration": "25",
+        "Name": "Wall sit",
+        "Category": "Legs",
+        "GifPath": "wallsit"
+    }
+]

@@ -1,0 +1,36 @@
+[{
+	"IntervalBetweenActivity": "25",
+	"IntervalBetweenRepetition": "60",
+	"NumberOfRepetition": 3,
+	"Name": "Abdos",
+	"Category": "Abs",
+	"Image": "abs"
+}, {
+	"IntervalBetweenActivity": "25",
+	"IntervalBetweenRepetition": "75",
+	"NumberOfRepetition": 3,
+	"Name": "Bras",
+	"Category": "Arms",
+	"Image": "arms"
+}, {
+	"IntervalBetweenActivity": "25",
+	"IntervalBetweenRepetition": "75",
+	"NumberOfRepetition": 3,
+	"Name": "Fessiers",
+	"Category": "Glutes",
+	"Image": "glutes"
+}, {
+	"IntervalBetweenActivity": "25",
+	"IntervalBetweenRepetition": "60",
+	"NumberOfRepetition": 3,
+	"Name": "Jambes",
+	"Category": "Legs",
+	"Image": "legs"
+}, {
+	"IntervalBetweenActivity": "30",
+	"IntervalBetweenRepetition": "90",
+	"NumberOfRepetition": 3,
+	"Name": "Haut du corps",
+	"Category": "UpperBody",
+	"Image": "upperbody"
+}]
