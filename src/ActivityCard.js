@@ -7,7 +7,7 @@ const ActivityCard = props => {
 
     return (
         <div className="card mb-2">
-            <img src={"assets/exercices/" + activity.GifPath + ".gif"} className="card-img-top" alt={activity.GifPath} />
+            <img src={process.env.PUBLIC_URL + "/assets/exercices/" + activity.GifPath + ".gif"} className="card-img-top" alt={activity.GifPath} />
             <div className="card-body">
                 <h4 className="card-title text-center">{activity.Name}</h4>
                 {isActive ? (
@@ -16,7 +16,7 @@ const ActivityCard = props => {
 
                 {activity.hasOwnProperty('Incoming') ? (
                     <h4 className="card-text text-center">A venir : {activity.Incoming}</h4>
-                ) : (<h4></h4>)}
+                ) : (<span></span>)}
             </div>
         </div>
     )

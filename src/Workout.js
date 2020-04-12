@@ -44,7 +44,7 @@ class Workout extends Component {
                     ) : activeComponent === 'WorkshopOverview' ?  (
                         <WorkshopOverview Workshop={selectedWorkshop} startWorkshop={this.startWorkshop} />
                     ) : activeComponent === 'WorkshopWizard' ?  (
-                        <WorkshopWizard Activities={workshopActivities} />
+                        <WorkshopWizard Activities={workshopActivities} goBackToStartPage={this.goBackToStartPage} />
                     ) : (
                         <WorkshopChoiceForm  />
                     )}

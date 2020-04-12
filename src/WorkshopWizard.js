@@ -8,12 +8,15 @@ class WorkshopWizard extends Component {
     }
 
     handleSelect = (selectedIndex) => {
-        this.setState({ activeIndex: selectedIndex })
+        if (selectedIndex <= this.props.Activities.length - 1){
+            this.setState({ activeIndex: selectedIndex })
+        } else {
+            this.props.goBackToStartPage();
+        }
     }
 
     setNext = () => {
         var next = this.state.activeIndex + 1;
-        console.log(next);
         this.handleSelect(next);
     }
 

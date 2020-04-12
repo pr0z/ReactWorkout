@@ -6,7 +6,7 @@ class WorskshopOverview extends Component {
     constructor(props){
         super(props)
         
-        var workshop = workshops.filter((wks) => wks.Category == this.props.Workshop)[0];
+        var workshop = workshops.filter((wks) => wks.Category === this.props.Workshop)[0];
         var filteredActivities = this.shuffle(activities.filter((activity) => activity.Category === this.props.Workshop)).slice(0, 5)
         var workshopActivities = [];
         var longRest = Object.assign({}, filteredActivities[0]);
@@ -18,11 +18,10 @@ class WorskshopOverview extends Component {
             var count = 0;
             filteredActivities.forEach(activity => {
                 workshopActivities.push(activity);
-                count++;
 
-                if (activity != filteredActivities[filteredActivities.length - 1]){
+                if (activity !== filteredActivities[filteredActivities.length - 1]){
                     var shortRest = Object.assign({}, activity);
-                    var incoming = filteredActivities[count + 1];
+                    var incoming = filteredActivities[++count];
 
                     shortRest.Duration = workshop.IntervalBetweenActivity;
                     shortRest.GifPath = "rest";
