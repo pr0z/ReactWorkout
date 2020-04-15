@@ -33,4 +33,11 @@
 	"Name": "Haut du corps",
 	"Category": "UpperBody",
 	"Image": "upperbody"
+}, {
+	"IntervalBetweenActivity": "45",
+	"IntervalBetweenRepetition": "90",
+	"NumberOfRepetition": 3,
+	"Name": "Cardio",
+	"Category": "Heart",
+	"Image": "heart"
 }]

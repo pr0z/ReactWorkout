@@ -6,6 +6,7 @@ const Header = (props) => {
             <div className="container">
                 <a className="navbar-brand js-scroll-trigger" href="#" onClick={props.GoBackToStartPage.bind(null)}>Roro's Workout</a>
             </div>
+            <br />
         </nav>
     )
 }

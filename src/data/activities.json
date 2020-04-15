@@ -178,5 +178,35 @@
         "Name": "Wall sit",
         "Category": "Legs",
         "GifPath": "wallsit"
+    },
+    {
+        "Duration": "25",
+        "Name": "High knees",
+        "Category": "Heart",
+        "GifPath": "highknee"
+    },
+    {
+        "Duration": "25",
+        "Name": "Jumping Jack",
+        "Category": "Heart",
+        "GifPath": "jumpingjacks"
+    },
+    {
+        "Duration": "25",
+        "Name": "Punches",
+        "Category": "Heart",
+        "GifPath": "punches"
+    },
+    {
+        "Duration": "25",
+        "Name": "Jump squats",
+        "Category": "Heart",
+        "GifPath": "jumpsquat"
+    },
+    {
+        "Duration": "25",
+        "Name": "Jump lunges",
+        "Category": "Heart",
+        "GifPath": "jumplunge"
     }
 ]

@@ -8,11 +8,13 @@ class Timer extends Component {
     componentDidMount() {
         this.myInterval = setInterval(() => {
             const { seconds } = this.state
-
+            
             if (seconds > 0) {
-                this.setState(({ seconds }) => ({
-                    seconds: seconds - 1
-                }))
+                if (this.props.IsRunning){
+                    this.setState(({ seconds }) => ({
+                        seconds: seconds - 1
+                    }))
+                }
             }
             if (seconds === 0) {
                 this.timerCompleted();

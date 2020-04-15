@@ -37,7 +37,7 @@ class WorkshopChoiceForm extends Component {
                     <br />
                     <div className="row">
                         {workshops.map((workshop, index) => (
-                            <div className="col-md-6 col-lg-4 mb-5">
+                            <div className="col-md-6 col-lg-4 mb-5" key={index}>
                                 <a href="#" onClick={this.handleClick.bind(null, workshop.Category)}>
                                     <div className="portfolio-item mx-auto" data-toggle="modal"  data-target="#portfolioModal3">
                                         <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">

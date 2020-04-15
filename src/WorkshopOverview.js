@@ -22,14 +22,20 @@ class WorskshopOverview extends Component {
 
         var totalDurationInMinutes = Math.ceil((sumActivity + sumLongRest) / 60);
 
+        var workshopCount = 0;
         for (let index = 0; index < workshop.NumberOfRepetition; index++) {
-            var count = 0;
+            ++workshopCount;
+            var activityCount = 0;
+            var progress = workshop.Name + " " + workshopCount + "/" + workshop.NumberOfRepetition
+            
             filteredActivities.forEach(activity => {
-                workshopActivities.push(activity);
-
+                var copy = Object.assign({}, activity);
+                copy.Progress = progress;
+                workshopActivities.push(copy);
+                
                 if (activity !== filteredActivities[filteredActivities.length - 1]){
-                    var shortRest = Object.assign({}, activity);
-                    var incoming = filteredActivities[++count];
+                    var shortRest = Object.assign({}, copy);
+                    var incoming = filteredActivities[++activityCount];
 
                     shortRest.Duration = workshop.IntervalBetweenActivity;
                     shortRest.GifPath = "rest";
@@ -41,7 +47,8 @@ class WorskshopOverview extends Component {
                     
                     workshopActivities.push(shortRest)
                 }
-            });
+            }
+            );
 
             workshopActivities.push(longRest);
         }
@@ -101,7 +108,7 @@ class WorskshopOverview extends Component {
                             </tbody>
                         </table>
                     </div>
-                    <a className="btn btn-primary" href="#" role="button" onClick={this.handleClick.bind(null)}>Démarrer</a>
+                    <button className="btn btn-primary w-100" onClick={this.handleClick.bind(null)}>Démarrer</button>
                 </div>
             </section>
         )

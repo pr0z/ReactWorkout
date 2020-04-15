@@ -12,8 +12,8 @@ class Workout extends Component {
     }
 
     selectWorkshop = (activity, component) => {
-        this.setState({ selectedWorkshop: activity, activeComponent: component})
-    } 
+        this.setState({ selectedWorkshop: activity, activeComponent: component })
+    }
 
     startWorkshop = (activities, component) => {
         this.setState({
@@ -36,20 +36,21 @@ class Workout extends Component {
         var workshopActivities = this.state.workshopActivities
 
         return (
-            <div>
-                <Header GoBackToStartPage={this.goBackToStartPage} />
-                <div id="container">
+                <div id="container" className="h-100">
                     {activeComponent === 'WorkshopChoiceForm' ? (
-                        <WorkshopChoiceForm selectWorkshop={this.selectWorkshop} />
-                    ) : activeComponent === 'WorkshopOverview' ?  (
-                        <WorkshopOverview Workshop={selectedWorkshop} startWorkshop={this.startWorkshop} />
-                    ) : activeComponent === 'WorkshopWizard' ?  (
-                        <WorkshopWizard Activities={workshopActivities} goBackToStartPage={this.goBackToStartPage} />
+                        <span>
+                            <Header GoBackToStartPage={this.goBackToStartPage} />
+                            <WorkshopChoiceForm selectWorkshop={this.selectWorkshop} /></span>
+                    ) : activeComponent === 'WorkshopOverview' ? (
+                        <span>
+                            <Header GoBackToStartPage={this.goBackToStartPage} />
+                        <WorkshopOverview Workshop={selectedWorkshop} startWorkshop={this.startWorkshop} /></span>
+                    ) : activeComponent === 'WorkshopWizard' ? (
+                            <WorkshopWizard Activities={workshopActivities} goBackToStartPage={this.goBackToStartPage} />   
                     ) : (
-                        <WorkshopChoiceForm  />
-                    )}
+                                    <WorkshopChoiceForm />
+                                )}
                 </div>
-            </div>
         )
     }
 }
