@@ -3,9 +3,9 @@ import activities from './data/activities.json'
 import workshops from './data/workshops.json'
 
 class WorskshopOverview extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        
+
         var workshop = workshops.filter((wks) => wks.Category === this.props.Workshop)[0];
         var filteredActivities = this.shuffle(activities.filter((activity) => activity.Category === this.props.Workshop)).slice(0, 5)
         var workshopActivities = [];
@@ -27,13 +27,13 @@ class WorskshopOverview extends Component {
             ++workshopCount;
             var activityCount = 0;
             var progress = workshop.Name + " " + workshopCount + "/" + workshop.NumberOfRepetition
-            
+
             filteredActivities.forEach(activity => {
                 var copy = Object.assign({}, activity);
                 copy.Progress = progress;
                 workshopActivities.push(copy);
-                
-                if (activity !== filteredActivities[filteredActivities.length - 1]){
+
+                if (activity !== filteredActivities[filteredActivities.length - 1]) {
                     var shortRest = Object.assign({}, copy);
                     var incoming = filteredActivities[++activityCount];
 
@@ -41,17 +41,22 @@ class WorskshopOverview extends Component {
                     shortRest.GifPath = "rest";
                     shortRest.Name = "Repos court";
 
-                    if (incoming !== undefined){
+                    if (incoming !== undefined) {
                         shortRest.Incoming = incoming.Name;
                     }
-                    
+
                     workshopActivities.push(shortRest)
                 }
-            }
-            );
+            });
 
-            workshopActivities.push(longRest);
+            workshopActivities.push(Object.assign({}, longRest));
         }
+
+        var percentProgress = 0;
+        workshopActivities.forEach(activity => {
+            var percent = Math.ceil(((++percentProgress) / workshopActivities.length) * 100);
+            activity.Now = percent;
+        });
 
         this.state = {
             filteredActivities: filteredActivities,
@@ -85,7 +90,6 @@ class WorskshopOverview extends Component {
         return (
             <section className="page-section">
                 <div className="container">
-                    <br />
                     <h2 className="text-center text-uppercase text-secondary mb-0">{this.state.selectedWorkshop.Name}</h2>
                     <h4 className="text-center text-secondary mb-0">{this.state.selectedWorkshop.NumberOfRepetition} répétitions - {this.state.totalDurationInMinutes} mn</h4>
                     <h4 className="text-center text-secondary mb-0">Repos : {this.state.selectedWorkshop.IntervalBetweenActivity}s - {this.state.selectedWorkshop.IntervalBetweenRepetition}s</h4>
@@ -102,7 +106,7 @@ class WorskshopOverview extends Component {
                                 {this.state.filteredActivities.map((activity, index) => (
                                     <tr key={index}>
                                         <td>{activity.Name}</td>
-                                        <td className="right-col">{activity.Duration} secondes</td>
+                                        <td className="right-col">{activity.Duration}s</td>
                                     </tr>
                                 ))}
                             </tbody>

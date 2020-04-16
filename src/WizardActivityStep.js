@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Timer from './Timer'
 import * as Icon from 'react-bootstrap-icons';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class WizardActivityStep extends Component {
 
@@ -10,7 +11,7 @@ class WizardActivityStep extends Component {
     }
 
     handleTimerStatusChange = () => {
-        if (this.state.timerIsRunning){
+        if (this.state.timerIsRunning) {
             this.setState({
                 timerIsRunning: false
             })
@@ -29,6 +30,7 @@ class WizardActivityStep extends Component {
             <div className="activity-container">
                 <div className="row h-50">
                     <img src={process.env.PUBLIC_URL + "/assets/exercices/" + activity.GifPath + ".gif"} className="h-100 w-100" alt={activity.GifPath} />
+                    <ProgressBar stripped="true" now={activity.Now} label={`${activity.Now}%`} />
                 </div>
                 <div className="row h-25">
                     <div className="col-md-12">
@@ -38,7 +40,7 @@ class WizardActivityStep extends Component {
                         {isActive ? (
                             <span>
                                 <h3 className="text-center">
-                                    <Timer Seconds={activity.Duration} SetNext={this.props.nextStep} IsRunning={this.state.timerIsRunning} />
+                                    <Timer Seconds={activity.Duration} Activity={activity} SetNext={this.props.nextStep} IsRunning={this.state.timerIsRunning} timerCompleted={this.props.timerCompleted} />
                                 </h3>
                             </span>
                         ) : (<span></span>)}
@@ -56,17 +58,17 @@ class WizardActivityStep extends Component {
                                 size={16} />
                         </button>&nbsp;
                         <button onClick={this.props.GoBackToStartPage} className="btn btn-primary btn-circle btn-md">
-                            <Icon.Stop 
+                            <Icon.Stop
                                 size={16} />
                         </button>&nbsp;
                         <button onClick={this.handleTimerStatusChange} className="btn btn-primary btn-circle btn-md">
-                            {this.state.timerIsRunning ? 
+                            {this.state.timerIsRunning ?
                                 <Icon.Pause size={16} /> :
                                 <Icon.Play size={16} />
                             }
                         </button>&nbsp;
                         <button onClick={this.props.nextStep} className="btn btn-primary btn-circle btn-md">
-                            <Icon.ChevronRight 
+                            <Icon.ChevronRight
                                 size={16} />
                         </button>
                     </div>

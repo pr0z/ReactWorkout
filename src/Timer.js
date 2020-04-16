@@ -28,6 +28,7 @@ class Timer extends Component {
 
     timerCompleted() {
         this.props.SetNext();
+        this.props.timerCompleted(this.props.Activity);
     }
 
     render() {

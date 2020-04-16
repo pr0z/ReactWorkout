@@ -54,3 +54,8 @@ body {
   font-size: 12px; 
   text-align: center; 
 } 
+
+.progress {
+  width: 100% !important;
+  border-radius: 0 !important;
+}
