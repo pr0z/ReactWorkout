@@ -5,7 +5,7 @@ import StepWizard from 'react-step-wizard';
 class WorkshopWizard extends Component {
 
     timerCompleted = (activity) => {
-        if (activity.Name === this.props.Activities[this.props.Activities.length - 1].Name){
+        if (activity.Name === this.props.Activities[this.props.Activities.length - 1].Name && activity.Now === 100){
             this.props.goBackToStartPage();
         }
     }
